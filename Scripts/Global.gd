@@ -1,22 +1,20 @@
 extends Node
 
-signal village_sent_signal(village)
+signal village_sent_signal(_village)
 signal resource_tile_signal(_resourceTile)
 signal resource_notile_click
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal change_to_map_signal
+signal change_to_resources_signal
+signal change_game_speed_signal(_gameSpeed)
+signal change_day_percent(_percent)
 
-const secondsPerDay = 60.0
+const secondsPerDay = 20.0
 var perSecond
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	perSecond = 1/secondsPerDay
-	pass # Replace with function body.
 
 func sendVillageSignal(_village):
-	#print("signal sent")
 	emit_signal("village_sent_signal", _village)
 	
 func sendResourceTileSignal(_resourceTile):
@@ -24,6 +22,15 @@ func sendResourceTileSignal(_resourceTile):
 	
 func sendResourceNoTileClick():
 	emit_signal("resource_notile_click")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	
+func changeToMap():
+	emit_signal("change_to_map_signal")
+
+func changeToResources():
+	emit_signal("change_to_resources_signal")
+	
+func changeGameSpeed(_gameSpeed):
+	emit_signal("change_game_speed_signal", _gameSpeed)
+	
+func changeDayPercent(_percent):
+	emit_signal("change_day_percent", _percent)

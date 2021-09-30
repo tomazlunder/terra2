@@ -45,6 +45,22 @@ func populateTilemap(_village):
 		var coordinates = ResourceCoordinates[i]
 		$ResourceTileMap.set_cell(coordinates.x, coordinates.y, type)
 		TileDict[coordinates] = resourceTile
+		
+		#Creating UI Tile Markers
+		var tileUIinstance = load("res://Scenes/TileUI.tscn").instance()
+		tileUIinstance.setTile(resourceTile)
+
+		tileUIinstance.hide()
+		tileUIinstance.show()
+		var realCords = $ResourceTileMap.map_to_world(coordinates)
+		var tileSize = $ResourceTileMap.tile_set.tile_get_texture(0).get_size().y
+		#Offset?? But not working, fixed with some hardcoded numbers (10,2)
+		var bla = tileUIinstance.get_child(0).rect_size
+		#print(bla)
+		realCords = realCords - Vector2(bla.x+10,bla.y*2)
+		tileUIinstance.set_position(realCords)
+		$TileUIControlNode.add_child(tileUIinstance)
+		
 		i = i+1
 
 #Detect click on tilemap

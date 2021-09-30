@@ -1,20 +1,31 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/ResourceTileControlNode.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ResourcesControlNode.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/UniversalUI.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/DayProgressBar.gd" type="Script" id=4]
 
 [node name="UniversalUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="TopBarHbox" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopBarHBox" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 108.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 1920, 81 )
 mouse_filter = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -23,32 +34,98 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonMap" type="Button" parent="TopBarHbox"]
+[node name="ButtonMap" type="Button" parent="VBoxContainer/TopBarHBox"]
 margin_right = 477.0
-margin_bottom = 108.0
+margin_bottom = 81.0
 size_flags_horizontal = 3
 text = "Map"
 
-[node name="ButtonResources" type="Button" parent="TopBarHbox"]
+[node name="ButtonResources" type="Button" parent="VBoxContainer/TopBarHBox"]
 margin_left = 481.0
 margin_right = 958.0
-margin_bottom = 108.0
+margin_bottom = 81.0
 size_flags_horizontal = 3
 text = "Resources"
 
-[node name="ButtonCenter" type="Button" parent="TopBarHbox"]
+[node name="ButtonCenter" type="Button" parent="VBoxContainer/TopBarHBox"]
 margin_left = 962.0
 margin_right = 1439.0
-margin_bottom = 108.0
+margin_bottom = 81.0
 size_flags_horizontal = 3
 text = "Center"
 
-[node name="VillageSelectOptionButton" type="OptionButton" parent="TopBarHbox"]
+[node name="VillageSelectOptionButton" type="OptionButton" parent="VBoxContainer/TopBarHBox"]
 margin_left = 1443.0
 margin_right = 1920.0
-margin_bottom = 108.0
+margin_bottom = 81.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="TimeHBox" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 85.0
+margin_right = 1920.0
+margin_bottom = 115.0
+
+[node name="DayProgressBar" type="ProgressBar" parent="VBoxContainer/TimeHBox"]
+margin_right = 1638.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+percent_visible = false
+script = ExtResource( 4 )
+
+[node name="Container" type="PanelContainer" parent="VBoxContainer/TimeHBox"]
+margin_left = 1642.0
+margin_right = 1792.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 150, 30 )
+
+[node name="Label" type="Label" parent="VBoxContainer/TimeHBox/Container"]
+margin_left = 7.0
+margin_top = 8.0
+margin_right = 143.0
+margin_bottom = 22.0
+text = "DAY: NUMBER"
+
+[node name="PauseButton" type="Button" parent="VBoxContainer/TimeHBox"]
+margin_left = 1796.0
+margin_right = 1825.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 29, 29 )
+text = "||"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OneXButton" type="Button" parent="VBoxContainer/TimeHBox"]
+margin_left = 1829.0
+margin_right = 1858.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 29, 29 )
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TwoXButton" type="Button" parent="VBoxContainer/TimeHBox"]
+margin_left = 1862.0
+margin_right = 1889.0
+margin_bottom = 30.0
+text = "2x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThreeXButton" type="Button" parent="VBoxContainer/TimeHBox"]
+margin_left = 1893.0
+margin_right = 1920.0
+margin_bottom = 30.0
+text = "3x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ResourceTileControlNode" type="Control" parent="."]
 anchor_bottom = 1.0
@@ -581,4 +658,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="VBoxContainer/TopBarHBox/ButtonMap" to="." method="_on_ButtonMap_pressed"]
+[connection signal="pressed" from="VBoxContainer/TopBarHBox/ButtonResources" to="." method="_on_ButtonResources_pressed"]
+[connection signal="pressed" from="VBoxContainer/TimeHBox/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/TimeHBox/OneXButton" to="." method="_on_OneXButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/TimeHBox/TwoXButton" to="." method="_on_TwoXButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/TimeHBox/ThreeXButton" to="." method="_on_ThreeXButton_pressed"]
 [connection signal="pressed" from="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/NameAndLvlHBox/CloseButton" to="ResourceTileControlNode" method="_on_CloseButton_pressed"]

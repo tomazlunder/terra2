@@ -1,0 +1,584 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/ResourceTileControlNode.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/ResourcesControlNode.gd" type="Script" id=2]
+
+[node name="UniversalUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TopBarHbox" type="HBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 108.0
+mouse_filter = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonMap" type="Button" parent="TopBarHbox"]
+margin_right = 477.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+text = "Map"
+
+[node name="ButtonResources" type="Button" parent="TopBarHbox"]
+margin_left = 481.0
+margin_right = 958.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+text = "Resources"
+
+[node name="ButtonCenter" type="Button" parent="TopBarHbox"]
+margin_left = 962.0
+margin_right = 1439.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+text = "Center"
+
+[node name="VillageSelectOptionButton" type="OptionButton" parent="TopBarHbox"]
+margin_left = 1443.0
+margin_right = 1920.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ResourceTileControlNode" type="Control" parent="."]
+anchor_bottom = 1.0
+margin_top = 216.0
+margin_right = 480.0
+margin_bottom = -216.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceTilePanel" type="PanelContainer" parent="ResourceTileControlNode"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceTileVBox" type="VBoxContainer" parent="ResourceTileControlNode/ResourceTilePanel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 473.0
+margin_bottom = 641.0
+
+[node name="NameAndLvlHBox" type="HBoxContainer" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_right = 466.0
+margin_bottom = 20.0
+
+[node name="TileNameLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/NameAndLvlHBox"]
+margin_top = 3.0
+margin_right = 372.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+text = "TILE NAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileLevelLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/NameAndLvlHBox"]
+margin_left = 376.0
+margin_top = 3.0
+margin_right = 442.0
+margin_bottom = 17.0
+text = "TILE LEVEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/NameAndLvlHBox"]
+margin_left = 446.0
+margin_right = 466.0
+margin_bottom = 20.0
+text = "X"
+
+[node name="SeparatorLabel1" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 24.0
+margin_right = 466.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+
+[node name="PerWorkerHBox" type="HBoxContainer" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 42.0
+margin_right = 466.0
+margin_bottom = 56.0
+
+[node name="PerWorkerTitleLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/PerWorkerHBox"]
+margin_right = 231.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Per worker"
+
+[node name="PerWorkerLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/PerWorkerHBox"]
+margin_left = 235.0
+margin_right = 466.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = ":X/Day"
+
+[node name="MaxWorkersHBox" type="HBoxContainer" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 60.0
+margin_right = 466.0
+margin_bottom = 74.0
+
+[node name="MaxWorkersTitleLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/MaxWorkersHBox"]
+margin_right = 231.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Max workers"
+
+[node name="MaxWorkersLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/MaxWorkersHBox"]
+margin_left = 235.0
+margin_right = 466.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = ":Y"
+
+[node name="CurrentWorkersHBox" type="HBoxContainer" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 78.0
+margin_right = 466.0
+margin_bottom = 92.0
+
+[node name="CurrentWorkersTitleLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/CurrentWorkersHBox"]
+margin_right = 231.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Current workers"
+
+[node name="CurrentWorkersLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/CurrentWorkersHBox"]
+margin_left = 235.0
+margin_right = 466.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = ":Z"
+
+[node name="TotalProductionHBox" type="HBoxContainer" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 96.0
+margin_right = 466.0
+margin_bottom = 110.0
+
+[node name="TotalProductionTitleLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/TotalProductionHBox"]
+margin_right = 231.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "TOTAL PRODUCTION"
+
+[node name="TotalProductionLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/TotalProductionHBox"]
+margin_left = 235.0
+margin_right = 466.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = ":W/Day"
+
+[node name="SeparatorLabel2" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 114.0
+margin_right = 466.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+
+[node name="SetWorkersTitleLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 132.0
+margin_right = 466.0
+margin_bottom = 146.0
+size_flags_horizontal = 3
+text = "SET WORKERS"
+
+[node name="SetWorkersHBox" type="HBoxContainer" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 150.0
+margin_right = 466.0
+margin_bottom = 170.0
+
+[node name="ButtonRemoveWorker" type="Button" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/SetWorkersHBox"]
+margin_right = 113.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumWorkersTextEdit" type="TextEdit" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/SetWorkersHBox"]
+margin_left = 117.0
+margin_right = 231.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "SOME NUMBER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonAddWorker" type="Button" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/SetWorkersHBox"]
+margin_left = 235.0
+margin_right = 348.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "+"
+
+[node name="ButtonConfirmWorkers" type="Button" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/SetWorkersHBox"]
+margin_left = 352.0
+margin_right = 466.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "CONFIRM"
+
+[node name="SeparatorLabel3" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 174.0
+margin_right = 466.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+
+[node name="UpgradeTitleLabel" type="Label" parent="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox"]
+margin_top = 192.0
+margin_right = 466.0
+margin_bottom = 206.0
+size_flags_horizontal = 3
+text = "UPGRADE"
+
+[node name="ResourcesControlNode" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -720.0
+margin_top = -108.0
+margin_right = 720.0
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourcesPanel" type="PanelContainer" parent="ResourcesControlNode"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResVBox" type="VBoxContainer" parent="ResourcesControlNode/ResourcesPanel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1433.0
+margin_bottom = 101.0
+
+[node name="Row1HBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox"]
+margin_right = 1426.0
+margin_bottom = 45.0
+size_flags_vertical = 3
+
+[node name="PopHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox"]
+margin_right = 234.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="PopTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/PopHBox"]
+margin_top = 15.0
+margin_right = 72.0
+margin_bottom = 29.0
+text = "Population:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/PopHBox"]
+margin_left = 76.0
+margin_top = 15.0
+margin_right = 92.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WheatHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox"]
+margin_left = 238.0
+margin_right = 472.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="WheatTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/WheatHBox"]
+margin_top = 15.0
+margin_right = 45.0
+margin_bottom = 29.0
+text = "Wheat:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WheatLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/WheatHBox"]
+margin_left = 49.0
+margin_top = 15.0
+margin_right = 65.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WoodHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox"]
+margin_left = 476.0
+margin_right = 710.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="WoodTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/WoodHBox"]
+margin_top = 15.0
+margin_right = 41.0
+margin_bottom = 29.0
+text = "Wood:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WoodLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/WoodHBox"]
+margin_left = 45.0
+margin_top = 15.0
+margin_right = 61.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClayHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox"]
+margin_left = 714.0
+margin_right = 949.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="ClayTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/ClayHBox"]
+margin_top = 15.0
+margin_right = 30.0
+margin_bottom = 29.0
+text = "Clay:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClayLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/ClayHBox"]
+margin_left = 34.0
+margin_top = 15.0
+margin_right = 50.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StoneHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox"]
+margin_left = 953.0
+margin_right = 1187.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="StoneTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/StoneHBox"]
+margin_top = 15.0
+margin_right = 40.0
+margin_bottom = 29.0
+text = "Stone:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StoneLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/StoneHBox"]
+margin_left = 44.0
+margin_top = 15.0
+margin_right = 60.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IronHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox"]
+margin_left = 1191.0
+margin_right = 1426.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="IronTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/IronHBox"]
+margin_top = 15.0
+margin_right = 30.0
+margin_bottom = 29.0
+text = "Iron:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IronLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/IronHBox"]
+margin_left = 34.0
+margin_top = 15.0
+margin_right = 50.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row2HBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox"]
+margin_top = 49.0
+margin_right = 1426.0
+margin_bottom = 94.0
+size_flags_vertical = 3
+
+[node name="FreePopHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox"]
+margin_right = 234.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="FreePopTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/FreePopHBox"]
+margin_top = 15.0
+margin_right = 32.0
+margin_bottom = 29.0
+text = "Free:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FreePopLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/FreePopHBox"]
+margin_left = 36.0
+margin_top = 15.0
+margin_right = 52.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WheatPDHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox"]
+margin_left = 238.0
+margin_right = 472.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="WheatPDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/WheatPDHBox"]
+margin_top = 15.0
+margin_right = 51.0
+margin_bottom = 29.0
+text = "Per day:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WheatPDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/WheatPDHBox"]
+margin_left = 55.0
+margin_top = 15.0
+margin_right = 71.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WoodPDHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox"]
+margin_left = 476.0
+margin_right = 710.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="WoodPDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/WoodPDHBox"]
+margin_top = 15.0
+margin_right = 51.0
+margin_bottom = 29.0
+text = "Per day:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WheatPDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/WoodPDHBox"]
+margin_left = 55.0
+margin_top = 15.0
+margin_right = 71.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClayPDHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox"]
+margin_left = 714.0
+margin_right = 949.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="ClayPDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/ClayPDHBox"]
+margin_top = 15.0
+margin_right = 51.0
+margin_bottom = 29.0
+text = "Per day:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClayPDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/ClayPDHBox"]
+margin_left = 55.0
+margin_top = 15.0
+margin_right = 71.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StonePDHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox"]
+margin_left = 953.0
+margin_right = 1187.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="StonePDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/StonePDHBox"]
+margin_top = 15.0
+margin_right = 51.0
+margin_bottom = 29.0
+text = "Per day:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StonePDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/StonePDHBox"]
+margin_left = 55.0
+margin_top = 15.0
+margin_right = 71.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IronPDHBox" type="HBoxContainer" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox"]
+margin_left = 1191.0
+margin_right = 1426.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="IronPDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/IronPDHBox"]
+margin_top = 15.0
+margin_right = 51.0
+margin_bottom = 29.0
+text = "Per day:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IronPDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/IronPDHBox"]
+margin_left = 55.0
+margin_top = 15.0
+margin_right = 71.0
+margin_bottom = 29.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/NameAndLvlHBox/CloseButton" to="ResourceTileControlNode" method="_on_CloseButton_pressed"]

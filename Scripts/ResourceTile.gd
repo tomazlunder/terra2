@@ -12,7 +12,7 @@ var tileName
 func initialize(_type):
 	level = 0
 	maxLevel = 10
-	workers = 1
+	workers = 0
 	
 	type = _type
 	
@@ -37,6 +37,10 @@ func initialize(_type):
 		
 func getProductionPerDay():
 	 return productionPerWorkerPerLevel[level] * workers
+	
+func getMaxWorkers():
+	return maxWorkersPerLevel[level]
+	
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

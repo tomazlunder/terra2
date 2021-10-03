@@ -1,6 +1,6 @@
 var villageID;
 var playerID;
-var coordiantes;
+var coordinates;
 var villageName;
 
 #WHEAT, CLAY, WOOD, STONE, IRON
@@ -17,17 +17,17 @@ var perDay = []
 var workers
 var freeWorkers
 	
-func initialize(_villageID, _playerID, _coordiantes, _villageName, _resources, _resourceTileTypes):
+func initialize(_villageID, _playerID, _coordinates, _villageName, _resources, _resourceTileTypes):
 	resources = [0,0,0,0,0]
 	maxResources = [2000,2000,2000,2000,2000]
 	perDay = [0,0,0,0,0]
 	
-	workers = 100
+	workers = 10
 	freeWorkers = workers
 	
 	villageID = _villageID
 	playerID = _playerID
-	coordiantes = _coordiantes
+	coordinates = _coordinates
 	villageName = _villageName
 	resources = _resources
 	

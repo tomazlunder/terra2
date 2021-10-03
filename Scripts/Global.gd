@@ -1,7 +1,7 @@
 extends Node
 
 signal village_sent_signal(_village)
-signal resource_tile_signal(_resourceTile)
+signal resource_tile_signal(_resourceTile, _village)
 signal resource_notile_click
 signal change_to_map_signal
 signal change_to_resources_signal
@@ -17,8 +17,8 @@ func _ready():
 func sendVillageSignal(_village):
 	emit_signal("village_sent_signal", _village)
 	
-func sendResourceTileSignal(_resourceTile):
-	emit_signal("resource_tile_signal", _resourceTile)
+func sendResourceTileSignal(_resourceTile, _village):
+	emit_signal("resource_tile_signal", _resourceTile, _village)
 	
 func sendResourceNoTileClick():
 	emit_signal("resource_notile_click")

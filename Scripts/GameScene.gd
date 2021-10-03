@@ -44,6 +44,8 @@ func changeToMapView():
 	$Map.show()
 	$Map/MapCamera.current = true;
 	$Resources/ResourceCamera.current = false;
+	
+	$Map/MapCamera.position = currentVillage.coordinates
 	#TODO: Center camera on current village
 
 func changeToResourceView():

@@ -75,7 +75,7 @@ func _unhandled_input(event):
 		#print(Bla)
 		if(Bla >= 1):
 			var resourceTile = TileDict[Cell]
-			Global.sendResourceTileSignal(resourceTile)
+			Global.sendResourceTileSignal(resourceTile,village)
 		elif(Bla < 0):
 			Global.sendResourceNoTileClick()
 		

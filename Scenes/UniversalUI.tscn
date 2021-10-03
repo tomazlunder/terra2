@@ -37,29 +37,37 @@ __meta__ = {
 [node name="ButtonMap" type="Button" parent="VBoxContainer/TopBarHBox"]
 margin_right = 477.0
 margin_bottom = 81.0
+focus_mode = 0
 size_flags_horizontal = 3
+enabled_focus_mode = 0
 text = "Map"
 
 [node name="ButtonResources" type="Button" parent="VBoxContainer/TopBarHBox"]
 margin_left = 481.0
 margin_right = 958.0
 margin_bottom = 81.0
+focus_mode = 0
 size_flags_horizontal = 3
+enabled_focus_mode = 0
 text = "Resources"
 
 [node name="ButtonCenter" type="Button" parent="VBoxContainer/TopBarHBox"]
 margin_left = 962.0
 margin_right = 1439.0
 margin_bottom = 81.0
+focus_mode = 0
 size_flags_horizontal = 3
+enabled_focus_mode = 0
 text = "Center"
 
 [node name="VillageSelectOptionButton" type="OptionButton" parent="VBoxContainer/TopBarHBox"]
 margin_left = 1443.0
 margin_right = 1920.0
 margin_bottom = 81.0
+focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+enabled_focus_mode = 0
 
 [node name="TimeHBox" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 85.0
@@ -665,3 +673,7 @@ __meta__ = {
 [connection signal="pressed" from="VBoxContainer/TimeHBox/TwoXButton" to="." method="_on_TwoXButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TimeHBox/ThreeXButton" to="." method="_on_ThreeXButton_pressed"]
 [connection signal="pressed" from="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/NameAndLvlHBox/CloseButton" to="ResourceTileControlNode" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/SetWorkersHBox/ButtonRemoveWorker" to="ResourceTileControlNode" method="_on_ButtonRemoveWorker_pressed"]
+[connection signal="text_changed" from="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/SetWorkersHBox/NumWorkersTextEdit" to="ResourceTileControlNode" method="_on_NumWorkersTextEdit_text_changed"]
+[connection signal="pressed" from="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/SetWorkersHBox/ButtonAddWorker" to="ResourceTileControlNode" method="_on_ButtonAddWorker_pressed"]
+[connection signal="pressed" from="ResourceTileControlNode/ResourceTilePanel/ResourceTileVBox/SetWorkersHBox/ButtonConfirmWorkers" to="ResourceTileControlNode" method="_on_ButtonConfirmWorkers_pressed"]

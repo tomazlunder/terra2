@@ -49,17 +49,13 @@ func populateTilemap(_village):
 		#Creating UI Tile Markers
 		var tileUIinstance = load("res://Scenes/TileUI.tscn").instance()
 		tileUIinstance.setTile(resourceTile)
-
-		tileUIinstance.hide()
-		tileUIinstance.show()
-		var realCords = $ResourceTileMap.map_to_world(coordinates)
-		var tileSize = $ResourceTileMap.tile_set.tile_get_texture(0).get_size().y
-		#Offset?? But not working, fixed with some hardcoded numbers (10,2)
-		var bla = tileUIinstance.get_child(0).rect_size
-		#print(bla)
-		realCords = realCords - Vector2(bla.x+10,bla.y*2)
-		tileUIinstance.set_position(realCords)
 		$TileUIControlNode.add_child(tileUIinstance)
+		
+		#Moving the TileUI to be centered on it's tile
+		var realCords = $ResourceTileMap.map_to_world(coordinates)
+		var tileUIsize = tileUIinstance.get_child(0).rect_size
+		realCords = realCords - tileUIsize/2
+		tileUIinstance.set_position(realCords)
 		
 		i = i+1
 

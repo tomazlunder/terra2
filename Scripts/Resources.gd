@@ -34,6 +34,7 @@ func populateTilemap(_village):
 	village = _village
 	
 	$ResourceTileMap.clear()
+	Global.delete_all_children($TileUIControlNode)
 	#Place village
 	$ResourceTileMap.set_cell(0, 0, 0)
 
@@ -58,6 +59,18 @@ func populateTilemap(_village):
 		tileUIinstance.set_position(realCords)
 		
 		i = i+1
+
+func _process(delta):
+	#Reposition TileUI nodes if necesarry (on resize and funky situations like that)
+	var i = 0
+	for tileUInode in $TileUIControlNode.get_children():
+		var coordinates = ResourceCoordinates[i]
+		var realCords = $ResourceTileMap.map_to_world(coordinates)
+		var tileUIsize = $TileUIControlNode.get_child(0).get_child(0).rect_size
+		realCords = realCords - tileUIsize/2
+		tileUInode.set_position(realCords)
+		i+=1
+		
 
 #Detect click on tilemap
 func _unhandled_input(event):

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/ResourceTileControlNode.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ResourcesControlNode.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/UniversalUI.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/DayProgressBar.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Themes/TileUI_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/Themes/TopBar_theme.tres" type="Theme" id=6]
 
 [node name="UniversalUI" type="Control"]
 anchor_right = 1.0
@@ -29,6 +31,7 @@ rect_min_size = Vector2( 1920, 81 )
 mouse_filter = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -347,6 +350,7 @@ __meta__ = {
 [node name="ResourcesPanel" type="PanelContainer" parent="ResourcesControlNode"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -368,19 +372,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="PopTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/PopHBox"]
-margin_top = 15.0
-margin_right = 72.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 109.0
+margin_bottom = 35.0
 text = "Population:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PopLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/PopHBox"]
-margin_left = 76.0
-margin_top = 15.0
-margin_right = 92.0
-margin_bottom = 29.0
+margin_left = 113.0
+margin_top = 10.0
+margin_right = 137.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -393,19 +397,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="WheatTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/WheatHBox"]
-margin_top = 15.0
-margin_right = 45.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 69.0
+margin_bottom = 35.0
 text = "Wheat:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WheatLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/WheatHBox"]
-margin_left = 49.0
-margin_top = 15.0
-margin_right = 65.0
-margin_bottom = 29.0
+margin_left = 73.0
+margin_top = 10.0
+margin_right = 97.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -418,19 +422,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="WoodTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/WoodHBox"]
-margin_top = 15.0
-margin_right = 41.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 63.0
+margin_bottom = 35.0
 text = "Wood:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WoodLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/WoodHBox"]
-margin_left = 45.0
-margin_top = 15.0
-margin_right = 61.0
-margin_bottom = 29.0
+margin_left = 67.0
+margin_top = 10.0
+margin_right = 91.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -443,19 +447,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="ClayTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/ClayHBox"]
-margin_top = 15.0
-margin_right = 30.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 35.0
 text = "Clay:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ClayLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/ClayHBox"]
-margin_left = 34.0
-margin_top = 15.0
-margin_right = 50.0
-margin_bottom = 29.0
+margin_left = 54.0
+margin_top = 10.0
+margin_right = 78.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -468,19 +472,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="StoneTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/StoneHBox"]
-margin_top = 15.0
-margin_right = 40.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 63.0
+margin_bottom = 35.0
 text = "Stone:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StoneLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/StoneHBox"]
-margin_left = 44.0
-margin_top = 15.0
-margin_right = 60.0
-margin_bottom = 29.0
+margin_left = 67.0
+margin_top = 10.0
+margin_right = 91.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -493,19 +497,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="IronTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/IronHBox"]
-margin_top = 15.0
-margin_right = 30.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 43.0
+margin_bottom = 35.0
 text = "Iron:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="IronLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row1HBox/IronHBox"]
-margin_left = 34.0
-margin_top = 15.0
-margin_right = 50.0
-margin_bottom = 29.0
+margin_left = 47.0
+margin_top = 10.0
+margin_right = 71.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -523,19 +527,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="FreePopTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/FreePopHBox"]
-margin_top = 15.0
-margin_right = 32.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 35.0
 text = "Free:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FreePopLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/FreePopHBox"]
-margin_left = 36.0
-margin_top = 15.0
-margin_right = 52.0
-margin_bottom = 29.0
+margin_left = 54.0
+margin_top = 10.0
+margin_right = 78.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -548,19 +552,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="WheatPDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/WheatPDHBox"]
-margin_top = 15.0
-margin_right = 51.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 81.0
+margin_bottom = 35.0
 text = "Per day:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WheatPDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/WheatPDHBox"]
-margin_left = 55.0
-margin_top = 15.0
-margin_right = 71.0
-margin_bottom = 29.0
+margin_left = 85.0
+margin_top = 10.0
+margin_right = 109.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -573,19 +577,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="WoodPDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/WoodPDHBox"]
-margin_top = 15.0
-margin_right = 51.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 81.0
+margin_bottom = 35.0
 text = "Per day:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WheatPDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/WoodPDHBox"]
-margin_left = 55.0
-margin_top = 15.0
-margin_right = 71.0
-margin_bottom = 29.0
+margin_left = 85.0
+margin_top = 10.0
+margin_right = 109.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -598,19 +602,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="ClayPDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/ClayPDHBox"]
-margin_top = 15.0
-margin_right = 51.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 81.0
+margin_bottom = 35.0
 text = "Per day:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ClayPDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/ClayPDHBox"]
-margin_left = 55.0
-margin_top = 15.0
-margin_right = 71.0
-margin_bottom = 29.0
+margin_left = 85.0
+margin_top = 10.0
+margin_right = 109.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -623,19 +627,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="StonePDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/StonePDHBox"]
-margin_top = 15.0
-margin_right = 51.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 81.0
+margin_bottom = 35.0
 text = "Per day:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StonePDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/StonePDHBox"]
-margin_left = 55.0
-margin_top = 15.0
-margin_right = 71.0
-margin_bottom = 29.0
+margin_left = 85.0
+margin_top = 10.0
+margin_right = 109.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -648,19 +652,19 @@ margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="IronPDTitleLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/IronPDHBox"]
-margin_top = 15.0
-margin_right = 51.0
-margin_bottom = 29.0
+margin_top = 10.0
+margin_right = 81.0
+margin_bottom = 35.0
 text = "Per day:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="IronPDLabel" type="Label" parent="ResourcesControlNode/ResourcesPanel/ResVBox/Row2HBox/IronPDHBox"]
-margin_left = 55.0
-margin_top = 15.0
-margin_right = 71.0
-margin_bottom = 29.0
+margin_left = 85.0
+margin_top = 10.0
+margin_right = 109.0
+margin_bottom = 35.0
 text = "10"
 __meta__ = {
 "_edit_use_anchors_": false

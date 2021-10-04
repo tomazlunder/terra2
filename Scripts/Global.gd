@@ -34,3 +34,8 @@ func changeGameSpeed(_gameSpeed):
 	
 func changeDayPercent(_percent):
 	emit_signal("change_day_percent", _percent)
+	
+static func delete_all_children(node):
+	for n in node.get_children():
+		node.remove_child(n)
+		n.queue_free()

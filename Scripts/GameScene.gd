@@ -54,6 +54,9 @@ func changeToResourceView():
 	
 	$Resources/ResourceCamera.current = true;
 	$Map/MapCamera.current = false;
+	
+	#Unnecesarry if currentVillage didn't change
+	#$Resources.populateTilemap(currentVillage)
 
 func _process(delta):
 	#If the game is paused
